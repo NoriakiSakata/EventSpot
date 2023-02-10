@@ -9,9 +9,16 @@ class AddEventPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: FloatingActionButton.extended(
-            backgroundColor: AppColors.primaryColor.shade600,
-            icon: const Icon(Icons.add),
-            label: const Text('新規イベントを追加'),
+            backgroundColor: AppColors.primaryColor.shade100,
+            icon: const Icon(
+              Icons.add,
+              color: AppColors.text1,
+            ),
+            label: const Text(
+              '新規イベントを追加',
+              style: TextStyle(
+                  color: AppColors.text1, fontWeight: FontWeight.bold),
+            ),
             onPressed: () {}),
         appBar: AppBar(title: const Text('追加したイベント')),
         body: ListView.builder(itemBuilder: (context, index) {
