@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:helloworld/pages/add_event/add_event_page.dart';
+import 'package:helloworld/pages/add_event/add_event_list_page.dart';
 import 'package:helloworld/pages/map/map_page.dart';
 import 'package:helloworld/pages/my_list/my_list_page.dart';
 import 'package:helloworld/themes/app_colors.dart';
@@ -15,7 +15,7 @@ class _BottomNavigationPage extends State<BottomNavigationPage> {
   static const _screens = [
     MapPage(),
     MyListPage(),
-    AddEventPage(),
+    AddEventListPage(),
   ];
 
   int _selectedIndex = 0;
