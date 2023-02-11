@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/gen/assets.gen.dart';
 import 'package:helloworld/pages/add_event/add_event_page.dart';
+import 'package:helloworld/pages/edit_event/edit_event_page.dart';
 import 'package:helloworld/themes/app_colors.dart';
 
 class AddEventListPage extends StatelessWidget {
@@ -43,7 +44,9 @@ class AddEventListPage extends StatelessWidget {
                   ]),
               trailing: ElevatedButton(
                 child: const Text('編集'),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, EditEventPage.route());
+                },
               ));
         }));
   }

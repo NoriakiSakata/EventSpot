@@ -24,7 +24,7 @@ class EventDetailPage extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(32),
+            padding: const EdgeInsets.all(32).copyWith(top: 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
