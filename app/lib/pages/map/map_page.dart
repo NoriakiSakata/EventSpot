@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:helloworld/gen/assets.gen.dart';
+import 'package:helloworld/pages/event_detail/event_detail_page.dart';
 import 'package:helloworld/themes/app_colors.dart';
 
 class MapPage extends StatefulWidget {
@@ -86,77 +87,82 @@ class MapSampleState extends State<MapPage> {
   Widget buildPageViewTile() {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Card(
-          child: Padding(
-            padding: const EdgeInsets.all(15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text(
-                          'バンクシーって誰？展',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(context, EventDetailPage.route());
+        },
+        child: Card(
+            child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(
+                        'バンクシーって誰？展',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text('福岡アジア美術館'),
+                      Text('10:00〜18:00'),
+                    ],
+                  ),
+                  Container(
+                    height: 80,
+                    width: 150,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage(Assets.images.sampleEvent.path))),
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                '期間 2022年1月10日〜2022年1月11日',
+                style: Theme.of(context).textTheme.caption,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        side: const BorderSide(
+                          color: AppColors.text1,
                         ),
-                        SizedBox(
-                          height: 10,
+                      ),
+                      onPressed: () {},
+                      child: const Text('行きたい 25')),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        side: const BorderSide(
+                          color: AppColors.text1,
                         ),
-                        Text('福岡アジア美術館'),
-                        Text('10:00〜18:00'),
-                      ],
-                    ),
-                    Container(
-                      height: 80,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage(Assets.images.sampleEvent.path))),
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  '期間 2022年1月10日〜2022年1月11日',
-                  style: Theme.of(context).textTheme.caption,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [
-                    OutlinedButton(
-                        style: OutlinedButton.styleFrom(
-                          side: const BorderSide(
-                            color: AppColors.text1,
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: const Text('行きたい 25')),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    OutlinedButton(
-                        style: OutlinedButton.styleFrom(
-                          side: const BorderSide(
-                            color: AppColors.text1,
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: const Text('行った 12'))
-                  ],
-                )
-              ],
-            ),
-          )),
+                      ),
+                      onPressed: () {},
+                      child: const Text('行った 12'))
+                ],
+              )
+            ],
+          ),
+        )),
+      ),
     );
   }
 }
