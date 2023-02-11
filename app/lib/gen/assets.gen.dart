@@ -16,8 +16,11 @@ class $AssetsImagesGen {
   AssetGenImage get sampleEvent =>
       const AssetGenImage('assets/images/sample_event.jpeg');
 
+  /// File path: assets/images/user.png
+  AssetGenImage get user => const AssetGenImage('assets/images/user.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [sampleEvent];
+  List<AssetGenImage> get values => [sampleEvent, user];
 }
 
 class Assets {
